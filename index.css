@@ -1,0 +1,447 @@
+  @import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Tilt+Prism&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Tilt+Prism&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script&family=Lobster&family=Tilt+Prism&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script&family=Lobster&family=Playfair+Display+SC&family=Tilt+Prism&display=swap');
+  
+  
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;    
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+}
+/* constant styling */
+.one{
+    text-align: center;
+    font-size: 2em;
+    padding-top: 50px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+.two{
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+:root{
+    --imgSize:50px;
+}
+
+/* header */
+.overallHeader{
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+.headerBody h3, h1{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;       
+}
+.headerBody h1{
+   font-size: 3em;
+   text-transform: uppercase;
+}
+
+.stickyHeader{
+   display: flex;
+   justify-content:space-between; 
+   align-items: center;
+   border-image: url(./img/eatingIcon.png) 25 25;
+   position: sticky;
+}
+.navBar ul{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: bolder;
+}
+label #btn,
+label #cancel{
+    color:white;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media(max-width:600px){
+    label #btn{
+        display: block;
+    }
+    .logoText h1{
+        font-size: 10px;
+    }
+    
+    .body{
+        display: block;
+        font-size: 10px;
+    }
+    .headerBody, ul button{
+        display: none;
+    }
+    
+
+    .navBar ul{
+        position: fixed;
+        width: 100%;
+        height: 50vh;
+        background-color: #34495e;
+        top:80px;
+        left:-100%;
+        text-align: center;
+        transition: all .5s;
+        display: block;
+        
+    }
+    .navbar ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+        
+    }
+    nav ul li a{
+        font-size: 20px;
+        display: block;
+        padding: 10px 0;
+        
+    }
+    #check:checked ~ ul{
+        left:0; 
+    }
+    #check:checked ~ label #btn{
+        display: none;
+    }
+    #check:checked ~ label #cancel{
+        display: block;
+    }
+}
+.navBar a{
+    color: #c9bbbb;
+    /* font-family: 'Tilt Prism', cursive; */
+    font-family: 'Dancing Script', cursive;
+}
+.navBar button{
+  background-color: #936666;  
+  border: 0;
+  padding:10px;
+  border-radius: 50px;
+ 
+}
+.navBar button a{
+    color: white;
+    font-weight: bolder;
+   
+}
+.logoWithText{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: var(--imgSize);
+}
+.logoText h1{
+    color: #c9bbbb;
+    font-family: 'Tilt Prism', cursive;
+}
+.logoText span{
+     font-size: 2em;
+     align-self: center;
+     font-family: 'Tilt Prism', cursive;
+     color: #936666
+}
+.headerBody span{
+    color: #d3a5a5;
+    font-family: 'Abril Fatface', cursive;
+}
+.logoText{
+    align-items: center;
+}
+.headerBody{
+    top: 40%;
+    /* left: 10%; */
+    margin: 0 90px;
+    position: absolute;
+    text-align: center;
+    font-family: 'Tilt Prism', cursive;
+}
+.headerBody button{
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 50px;
+    border: none;
+    background-color: #a58686;
+}
+.headerBody button a{
+    color: rgb(250, 241, 241)
+}
+.backgroundVideo{
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    filter: brightness(0.25);
+}
+
+ .bodySection{
+    background-color: #2D2828;
+    color: white;
+    line-height: 20px;
+
+}
+
+/* choose a program styling */
+.bodySection img{
+    width: 120px;
+    float: left;
+    margin-right:15px;
+    
+}
+.programContent{
+   display: grid;
+   grid-template-columns: 33.3% 33.3%;
+   justify-content: center;
+   column-gap: 60px;
+}
+
+.food h1{
+    margin-bottom:15px;
+}
+/* program content read more */
+#check, #check2, #check3,#check4{
+    display: none;
+}
+.content, .content2, .content3, .content4{
+    display: none;
+}
+label{
+    color: #cfadad;
+    margin-top: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline;
+}
+#check:checked ~ .content,
+#check2:checked ~ .content2,
+#check3:checked ~ .content3,
+#check4:checked ~ .content4
+{
+    display: inline;
+}
+
+/* Dont think, begin today */
+.becomeMember{
+    text-align: center;
+    margin: 20px 0%;
+    background-color: tomato;
+    padding: 110px 0;
+    background-image: url(./img/timetable.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    color: white;
+    text-shadow: 0 0 9px #FF0000, 0 0 18px #0000ff;
+}
+.becomeMember p{
+    font-size: 19px;
+    font-weight: bolder;
+    margin: 0 25px;
+}
+.becomeMember button{
+    background-color: #2D2828;
+    border: none;
+    padding: 15px;
+    border-radius: 25px 10px;
+    color: white;
+    font-size: 15px;
+}
+/* Our Classes */
+.ourClasses{
+    position: relative;
+    margin: 0 20px;
+}
+
+.side{
+    margin: 50px 15%;
+}
+
+.leftSide button{
+    display: block;
+    margin-bottom: 30px;
+    border-radius: 50px 25px 50px 25px;
+    padding: 15px;
+    width: 20%;
+    border: none;
+}
+.rightSide{
+    position: absolute;
+    right: 25%;
+    top: 140px;
+    width: 40vw;
+
+}
+.rightSide button{
+    padding: 20px;
+    margin: 15px 15px 0;
+    border: none;
+    font-weight: bolder;
+}
+
+.rightSide img{
+   width: 50vw;
+   height: 45vh;
+   float: left;
+   object-fit: cover;
+   border-radius: 10px;
+   padding-bottom: 20px;
+}
+.rightText{
+    clear: both;
+}
+/* horizontal line */
+.horizontalLIne{
+    margin: 140px auto 0;
+    width: 80%;
+}
+.tableContent{
+    position: relative;
+}
+/* Class Schedule */
+.tableContent table, td, th{
+    border: 1px solid white;
+    border-collapse: collapse;   
+}
+.tbleImg{
+    background-image: url(./img/backimg1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 1px;
+    /* margin: 0 auto; */
+    width: 100%;
+    height: 103vh;
+    opacity: 0.1;
+    position: absolute;
+}
+
+
+.tableContent table{
+    width: 70%;
+    height: 80vh;   
+    margin: 0 auto;
+}
+.tableContent td{
+    text-align: center;
+}
+
+.tableContent tr:hover{
+    background-color: gray;
+}
+/* expert cook / trainers */
+
+.card {
+  width: 250px;
+    box-shadow: 0px 0px 1px rgba(240, 236, 236, 0.1), 0 6px 20px 0 rgba(216, 144, 144, 0.932);
+    text-align: center;
+    float: left;
+    margin-left: 140px;
+}
+
+.cardShadows::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.card .container{
+    padding: 10px;
+}
+.cardHeader img{
+    width: 245px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+/* mapForm */
+.mapForm{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 120px;
+}
+.inlineDisp{
+    display: flex;
+    gap: 20px;
+}
+
+input[type=text],
+input[type=email]{
+   border:none;
+   background-color: #936666;
+   color: white;
+   outline: none;
+   margin-bottom: 29px;
+   padding: 20px;
+   border-radius: 20px 10px 20px 10px;
+}
+
+#text2{
+   width: 100%;
+   border-radius: 10px;
+}
+
+.right textarea{
+    width: 100%;
+    background-color: #936666;
+    color: white;
+    border-radius: 10px;
+}
+
+::placeholder{
+    color: white;
+    font-size:17px ;
+}
+.right{
+    border: 10px solid;
+    border-image: url(./img/trainer2.jpg) 25 25;
+    border-width: 50px;
+    padding: 50px;
+}
+
+/* @keyframes right {
+    0%{
+        transform: scale(.9);
+        opacity: 0;
+    }
+    20%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    80%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+} */
+/* footer */
+footer{
+    padding: 20px;
+    text-align: center;
+    background-color: #a58686;
+    color: white;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
